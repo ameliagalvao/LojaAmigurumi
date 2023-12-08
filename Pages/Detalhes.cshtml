@@ -1,0 +1,37 @@
+﻿@page "/pattern/{slug}/{id}"
+@model LojaAmigurumi.Pages.DetailsModel
+
+<div>
+    <h2 class="my-3">@Model.Pattern.PatternName</h2>
+
+    <div class="row">
+
+        <div class="col-4">
+            <img class="img-fluid rounded" src="@Model.Pattern.PatternImageUri">
+        </div>
+
+        <div class="col-6">
+            <h4 class="my-3">Sobre:</h4>
+            <p>@Model.Pattern.PatternDescription</p>
+            <h4 class="my-3">Mais Info:</h4>
+            <ul>
+                <li><label asp-for="Pattern.PatternPrice"></label>: @Html.DisplayFor(model => model.Pattern.PatternPrice)</li>
+                @* @if (Model.Marca is not null)
+                {
+                    <li><label asp-for="Hamburguer.MarcaId"></label>: @Html.DisplayFor(model => model.Marca.Descricao)</li>
+                }
+                @if (Model.Hamburguer.Categorias.Count > 0)
+                {
+                    <li>
+                        <label asp-for="Hamburguer.Categorias"></label>:
+                        @string.Join(", ", Model.Hamburguer.Categorias.Select(item => item.Descricao))
+                    </li>
+                } *@
+            </ul>
+            @* @if (User.Identity.IsAuthenticated)
+            {
+                <a class="btn my-3 btn-primary"
+                   asp-page="Edit" asp-route-id="@Model.Pattern.PatternID">Editar</a>
+            } *@
+        </div>
+</div>
