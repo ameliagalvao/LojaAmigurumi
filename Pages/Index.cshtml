@@ -16,9 +16,9 @@
                 <h5 class="card-title">@item.PatternName</h5>
                 <p class="card-text">@item.PatternDescription</p>
                 <a class="btn btn-primary"
-                   asp-page="/Details"
-                   asp-route-slug="@item.PatternSlug"
-                   asp-route-id="@item.PatternID">Ver mais</a>
+                   asp-page="/Detalhes"
+                   asp-route-id="@item.PatternID"
+                   asp-route-slug="@item.PatternSlug">Ver mais</a>
             </div>
         </div>
     } 
