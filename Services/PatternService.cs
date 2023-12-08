@@ -2,7 +2,7 @@
 
 namespace LojaAmigurumi.Services
 {
-    public class PatternService
+    public class PatternService : IPatternService
     {
         private IList<Pattern> _patterns;
 

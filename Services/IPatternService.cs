@@ -1,6 +1,10 @@
 ﻿namespace LojaAmigurumi.Services
 {
-    public class IPatternService
+    public interface IPatternService
     {
+        IList<Models.Pattern> ObterTodas();
+        Models.Pattern Obter(int id);
+        void Incluir(Models.Pattern pattern);
+
     }
 }

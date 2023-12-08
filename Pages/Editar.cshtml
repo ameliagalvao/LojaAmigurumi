@@ -1,6 +1,67 @@
 ﻿@page
 @model LojaAmigurumi.Pages.EditarModel
+<div class="row pt-5">
+    <div class="col-md-4">
+        <form method="post">
+            <h4>Alteração de Receita</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<div>
+            <input type="hidden" asp-for="Pattern.PatternID" />
 
+            <div class="form-group">
+                <label asp-for="Pattern.PatternName" class="control-label"></label>
+                <input asp-for="Pattern.PatternName" class="form-control" />
+                <span asp-validation-for="Pattern.PatternName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Pattern.PatternDescription" class="control-label"></label>
+                <input asp-for="Pattern.PatternDescription" class="form-control" />
+                <span asp-validation-for="Pattern.PatternDescription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Pattern.PatternImageUri" class="control-label"></label>
+                <input asp-for="Pattern.PatternImageUri" class="form-control" />
+                <span asp-validation-for="Pattern.PatternImageUri" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Pattern.PatternPrice" class="control-label"></label>
+                <input asp-for="Pattern.PatternPrice" class="form-control" />
+                <span asp-validation-for="Pattern.PatternPrice" class="text-danger"></span>
+            </div>
+
+            @* <div class="form-group mt-3 mb-3">
+            <label asp-for="Hamburguer.MarcaId" class="control-label"></label>
+
+            <select class="form-select"
+            asp-for="Hamburguer.MarcaId"
+            asp-items="Model.MarcaOptionItems">
+            <option value="">Selecione uma opção</option>
+            </select>
+
+            <span asp-validation-for="Hamburguer.MarcaId" class="text-danger">
+            </span>
+            </div>
+
+            <div class="form-group mt-3 mb-3">
+            <label asp-for="Hamburguer.Categorias" class="control-label"></label>
+
+            <select class="form-select"
+            asp-for="CategoriaIds"
+            asp-items="Model.CategoriaOptionItems">
+            </select>
+
+            <span asp-validation-for="Hamburguer.Categorias" class="text-danger"></span>
+            </div> *@
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="submit" value="Excluir" class="btn btn-danger"
+                       asp-page-handler="Delete" />
+            </div>
+        </form>
+    </div>
 </div>
