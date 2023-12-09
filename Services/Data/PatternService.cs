@@ -32,6 +32,7 @@ namespace LojaAmigurumi.Services.Data
             patternEncontrada.PatternDescription = pattern.PatternDescription;
             patternEncontrada.PatternImageUri = pattern.PatternImageUri;
             patternEncontrada.PatternPrice = pattern.PatternPrice;
+            patternEncontrada.NivelId = pattern.NivelId;
             _context.SaveChanges();
         }
 

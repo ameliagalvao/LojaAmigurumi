@@ -2,6 +2,7 @@ using LojaAmigurumi.Models;
 using LojaAmigurumi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LojaAmigurumi.Pages
 {
@@ -9,6 +10,7 @@ namespace LojaAmigurumi.Pages
     {
 
         private IPatternService _service;
+        public SelectList NivelOptionItems { get; set; }
         public EditarModel(IPatternService patternService)
         {
             _service = patternService;
@@ -17,7 +19,12 @@ namespace LojaAmigurumi.Pages
         [BindProperty]
         public Pattern Pattern { get; set; }
         public void OnGet(int id)
-            => Pattern = _service.Obter(id);
+        {
+            Pattern = _service.Obter(id);
+            NivelOptionItems = new SelectList(_service.ObterTodosNiveis(),
+                                                nameof(Nivel.NivelId),
+                                                nameof(Nivel.NivelNome));
+        }
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
