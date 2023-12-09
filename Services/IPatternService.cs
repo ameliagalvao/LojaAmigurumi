@@ -1,4 +1,6 @@
-﻿namespace LojaAmigurumi.Services
+﻿using LojaAmigurumi.Models;
+
+namespace LojaAmigurumi.Services
 {
     public interface IPatternService
     {
@@ -9,6 +11,8 @@
         void Alterar(Models.Pattern pattern);
 
         void Excluir(int id);
+
+        IList<Nivel> ObterTodosNiveis();
 
     }
 }

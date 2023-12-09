@@ -41,5 +41,10 @@ namespace LojaAmigurumi.Services.Data
             _context.Pattern.Remove(pattern);
             _context.SaveChanges();
         }
+
+        IList<Nivel> IPatternService.ObterTodosNiveis()
+        {
+            return _context.Nivel.ToList();
+        }
     }
 }

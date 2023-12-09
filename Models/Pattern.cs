@@ -32,5 +32,7 @@ namespace LojaAmigurumi.Models
         [DataType(DataType.Currency)]
         public double PatternPrice { get; set; }
 
+        public int? NivelId { get; set; }
+
     }
 }

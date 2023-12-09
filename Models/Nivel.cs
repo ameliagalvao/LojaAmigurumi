@@ -7,6 +7,6 @@
         public string NivelNome { get; set; }
         public string NivelDescricao { get; set; }
 
-        public ICollection<Pattern>? Patterns { get; set; }
+        public ICollection<Pattern> Patterns { get; set; }
     }
 }

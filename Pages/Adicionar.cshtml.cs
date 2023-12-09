@@ -2,15 +2,24 @@ using LojaAmigurumi.Models;
 using LojaAmigurumi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LojaAmigurumi.Pages
 {
     public class AdicionarModel : PageModel
     {
+        public SelectList NivelOptionItems { get; set; }
         private IPatternService _service;
         public AdicionarModel(IPatternService patternService)
         {
             _service = patternService;
+        }
+
+        public void OnGet()
+        {
+            NivelOptionItems = new SelectList(_service.ObterTodosNiveis(),
+                                                nameof(Nivel.NivelId),
+                                                nameof(Nivel.NivelNome));
         }
 
         [BindProperty]
