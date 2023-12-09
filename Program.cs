@@ -1,11 +1,12 @@
 using LojaAmigurumi.Data;
 using LojaAmigurumi.Services;
+using LojaAmigurumi.Services.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IPatternService, PatternService>();
+builder.Services.AddTransient<IPatternService, PatternService>();
 
 builder.Services.AddDbContext<PatternDbContext>();
 

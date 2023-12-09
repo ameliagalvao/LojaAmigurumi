@@ -24,7 +24,16 @@ namespace LojaAmigurumi.Pages
             {
                 return Page();
             }
-            _service.Incluir(Pattern);
+
+            _service.Alterar(Pattern);
+
+            return RedirectToPage("/Index");
+        }
+
+        public IActionResult OnPostDelete()
+        {
+            _service.Excluir(Pattern.PatternId);
+
             return RedirectToPage("/Index");
         }
     }

@@ -6,5 +6,9 @@
         Models.Pattern Obter(int id);
         void Incluir(Models.Pattern pattern);
 
+        void Alterar(Models.Pattern pattern);
+
+        void Excluir(int id);
+
     }
 }
