@@ -28,7 +28,7 @@ namespace LojaAmigurumi.Data.Migrations
                 {
                     CategoriaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoriaDescricao = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CategoriaNome = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,6 +41,7 @@ namespace LojaAmigurumi.Data.Migrations
                 {
                     NivelId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    NivelNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NivelDescricao = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

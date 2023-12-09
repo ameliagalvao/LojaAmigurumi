@@ -36,7 +36,7 @@ namespace LojaAmigurumi.Data.Migrations
 
                     b.HasKey("CategoriaId");
 
-                    b.ToTable("Categorias");
+                    b.ToTable("Categorias", (string)null);
                 });
 
             modelBuilder.Entity("LojaAmigurumi.Models.Nivel", b =>
@@ -53,7 +53,7 @@ namespace LojaAmigurumi.Data.Migrations
 
                     b.HasKey("NivelId");
 
-                    b.ToTable("Nivel");
+                    b.ToTable("Nivel", (string)null);
                 });
 
             modelBuilder.Entity("LojaAmigurumi.Models.Pattern", b =>
@@ -93,7 +93,7 @@ namespace LojaAmigurumi.Data.Migrations
 
                     b.HasIndex("NivelId");
 
-                    b.ToTable("Pattern");
+                    b.ToTable("Pattern", (string)null);
                 });
 
             modelBuilder.Entity("LojaAmigurumi.Models.Pattern", b =>
