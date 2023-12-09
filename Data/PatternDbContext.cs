@@ -5,6 +5,8 @@ namespace LojaAmigurumi.Data
     public class PatternDbContext : DbContext
     {
         public DbSet<Pattern> Pattern { get; set; }
+        public DbSet<Nivel> Nivel { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var config = new ConfigurationBuilder()
