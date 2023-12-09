@@ -12,10 +12,12 @@ namespace LojaAmigurumi.Pages
             _service = patternService;
         }
         public Pattern Pattern { get; private set; }
+        public Nivel Nivel { get; private set; }
 
         public IActionResult OnGet(int id)
         {
             Pattern = _service.Obter(id);
+            Nivel = _service.ObterTodosNiveis().SingleOrDefault(item => item.NivelId == Pattern.NivelId);
 
             if (Pattern == null)
             {

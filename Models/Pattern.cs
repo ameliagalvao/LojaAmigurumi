@@ -32,7 +32,9 @@ namespace LojaAmigurumi.Models
         [DataType(DataType.Currency)]
         public double PatternPrice { get; set; }
 
-        public int? NivelId { get; set; }
+        [Display(Name = "Nivel de Dificuldade")]
+        [Required(ErrorMessage = "Campo 'Nivel de Dificuldade' obrigatório.")]
+        public int NivelId { get; set; }
 
     }
 }

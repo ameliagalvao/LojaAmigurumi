@@ -15,6 +15,7 @@
             <h4 class="my-3">Mais Info:</h4>
             <ul>
                 <li><label asp-for="Pattern.PatternPrice"></label>: @Html.DisplayFor(model => model.Pattern.PatternPrice)</li>
+            <li><label asp-for="Pattern.NivelId"></label>: @Html.DisplayFor(model => model.Nivel.NivelNome)</li>
             </ul>
             <a class="btn my-3 btn-primary"
             asp-page="Editar" asp-route-id="@Model.Pattern.PatternId">Editar</a>
