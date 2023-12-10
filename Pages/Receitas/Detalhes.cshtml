@@ -6,7 +6,7 @@
     <div class="row">
 
         <div class="col-4">
-            <img class="img-fluid rounded" src="@Model.Pattern.PatternImageUri">
+            <img class="img-fluid rounded" src="/@Model.Pattern.PatternImageUri">
         </div>
 
         <div class="col-6">
@@ -14,9 +14,19 @@
             <p>@Model.Pattern.PatternDescription</p>
             <h4 class="my-3">Mais Info:</h4>
             <ul>
-                <li><label asp-for="Pattern.PatternPrice"></label>: @Html.DisplayFor(model => model.Pattern.PatternPrice)</li>
-            <li><label asp-for="Pattern.NivelId"></label>: @Html.DisplayFor(model => model.Nivel.NivelNome)</li>
-            </ul>
+            <li>
+                <label asp-for="Pattern.PatternPrice"></label>:
+                @if (Model.Pattern.ReceitaGratuita)
+                {
+                    <span>Receita Gratuita</span>
+                }
+                else
+                {
+                    @Html.DisplayFor(model => model.Pattern.PatternPrice)
+                }
+            </li>
+            <li><label asp-for="Pattern.NivelId"></label>: @Html.DisplayFor(model => model.Nivel.NivelNome) (@Html.DisplayFor(model => model.Nivel.NivelDescricao))</li>
+        </ul>
             <a class="btn my-3 btn-primary"
             asp-page="Editar" asp-route-id="@Model.Pattern.PatternId">Editar</a>
         </div>

@@ -20,8 +20,8 @@ namespace LojaAmigurumi.Data.Migrations
             return new List<Nivel>()
             {
                 new Nivel() {NivelNome = "Iniciante", NivelDescricao = "Anél Mágico, Ponto baixo, aumento e diminuição"},
-                new Nivel() {NivelNome = "Intermediário", NivelDescricao = "Além dos requisitos do iniciante, costurar peças"},
-                new Nivel() {NivelNome = "Avançado", NivelDescricao = "Além dos resuisitos de iniciante e intermediário, controle de tensão, diferentes tipos de costura, acabamento invisível, troca de cor invisível."}
+                new Nivel() {NivelNome = "Intermediário", NivelDescricao = "Anél Mágico, Ponto baixo, aumento e diminuição, costurar peças"},
+                new Nivel() {NivelNome = "Avançado", NivelDescricao = "Anél Mágico, Ponto baixo, aumento e diminuição, costurar peças, controle de tensão, diferentes tipos de costura, acabamento invisível, troca de cor invisível."}
             };
         }
     }
