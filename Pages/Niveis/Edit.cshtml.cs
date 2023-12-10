@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using LojaAmigurumi.Data;
 using LojaAmigurumi.Models;
 
-namespace LojaAmigurumi.Pages_Nivel
+namespace LojaAmigurumi.Pages_Niveis
 {
     public class EditModel : PageModel
     {

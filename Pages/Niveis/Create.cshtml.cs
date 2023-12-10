@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using LojaAmigurumi.Data;
 using LojaAmigurumi.Models;
 
-namespace LojaAmigurumi.Pages_Nivel
+namespace LojaAmigurumi.Pages_Niveis
 {
     public class CreateModel : PageModel
     {

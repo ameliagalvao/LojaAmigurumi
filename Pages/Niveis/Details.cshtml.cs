@@ -8,19 +8,18 @@ using Microsoft.EntityFrameworkCore;
 using LojaAmigurumi.Data;
 using LojaAmigurumi.Models;
 
-namespace LojaAmigurumi.Pages_Nivel
+namespace LojaAmigurumi.Pages_Niveis
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly LojaAmigurumi.Data.PatternDbContext _context;
 
-        public DeleteModel(LojaAmigurumi.Data.PatternDbContext context)
+        public DetailsModel(LojaAmigurumi.Data.PatternDbContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
-      public Nivel Nivel { get; set; } = default!;
+      public Nivel Nivel { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,7 +29,6 @@ namespace LojaAmigurumi.Pages_Nivel
             }
 
             var nivel = await _context.Nivel.FirstOrDefaultAsync(m => m.NivelId == id);
-
             if (nivel == null)
             {
                 return NotFound();
@@ -40,24 +38,6 @@ namespace LojaAmigurumi.Pages_Nivel
                 Nivel = nivel;
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null || _context.Nivel == null)
-            {
-                return NotFound();
-            }
-            var nivel = await _context.Nivel.FindAsync(id);
-
-            if (nivel != null)
-            {
-                Nivel = nivel;
-                _context.Nivel.Remove(Nivel);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }
