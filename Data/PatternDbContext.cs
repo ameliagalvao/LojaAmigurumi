@@ -1,8 +1,9 @@
 ﻿using LojaAmigurumi.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 namespace LojaAmigurumi.Data
 {
-    public class PatternDbContext : DbContext
+    public class PatternDbContext : IdentityDbContext
     {
         public DbSet<Pattern> Pattern { get; set; }
         public DbSet<Nivel> Nivel { get; set; }

@@ -1,14 +1,19 @@
 using LojaAmigurumi.Data;
 using LojaAmigurumi.Services;
 using LojaAmigurumi.Services.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("PatternDbContextConnection") ?? throw new InvalidOperationException("Connection string 'PatternDbContextConnection' not found.");
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IPatternService, PatternService>();
 
 builder.Services.AddDbContext<PatternDbContext>();
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<PatternDbContext>();
 
 var app = builder.Build();
 
