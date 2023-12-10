@@ -19,7 +19,9 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Categoria?.CategoriaId">Edit</a> |
+<div>@if (User.Identity.IsAuthenticated)
+        {
+    <a asp-page="./Edit" asp-route-id="@Model.Categoria?.CategoriaId">Editar</a>
+        }
     <a asp-page="./Index">Back to List</a>
 </div>

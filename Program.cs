@@ -3,11 +3,17 @@ using LojaAmigurumi.Services;
 using LojaAmigurumi.Services.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AuthorizeFolder("/Niveis");
+    options.Conventions.AuthorizeFolder("/Categorias");
+});
+
 builder.Services.AddTransient<IPatternService, PatternService>();
 
 builder.Services.AddDbContext<PatternDbContext>();

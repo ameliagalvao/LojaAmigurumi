@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using LojaAmigurumi.Data;
 using LojaAmigurumi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LojaAmigurumi.Pages_Niveis
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly LojaAmigurumi.Data.PatternDbContext _context;

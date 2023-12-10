@@ -1,11 +1,13 @@
 using LojaAmigurumi.Models;
 using LojaAmigurumi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LojaAmigurumi.Pages.Receitas
 {
+    [Authorize]
     public class AdicionarModel : PageModel
     {
         public SelectList NivelOptionItems { get; set; }

@@ -27,7 +27,10 @@
             </li>
             <li><label asp-for="Pattern.NivelId"></label>: @Html.DisplayFor(model => model.Nivel.NivelNome) (@Html.DisplayFor(model => model.Nivel.NivelDescricao))</li>
         </ul>
+        @if (User.Identity.IsAuthenticated)
+        {
             <a class="btn my-3 btn-primary"
-            asp-page="Editar" asp-route-id="@Model.Pattern.PatternId">Editar</a>
+               asp-page="Editar" asp-route-id="@Model.Pattern.PatternId">Editar</a>
+        }
         </div>
 </div>
