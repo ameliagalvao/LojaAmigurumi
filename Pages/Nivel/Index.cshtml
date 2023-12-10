@@ -1,0 +1,42 @@
+@page
+@model LojaAmigurumi.Pages_Nivel.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nivel[0].NivelNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nivel[0].NivelDescricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Nivel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelDescricao)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.NivelId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.NivelId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.NivelId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
