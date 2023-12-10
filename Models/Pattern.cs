@@ -22,10 +22,10 @@ namespace LojaAmigurumi.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Campo 'Caminho da Image' obrigatório.")]
         public string PatternImageUri { get; set; }
 
-        //[Display(Name = "Receita Gratuita?")]
-        //public bool ReceitaGratuita { get; set; }
+        [Display(Name = "Receita Gratuita?")]
+        public bool ReceitaGratuita { get; set; }
 
-        //public string ReceitaGratuitaFormatada => ReceitaGratuita ? "Sim" : "Não";
+        public string ReceitaGratuitaFormatada => ReceitaGratuita ? "Sim" : "Não";
 
         [Display(Name = "Preço")]
         [Required(ErrorMessage = "Campo 'Preço' obrigatório.")]
@@ -35,6 +35,8 @@ namespace LojaAmigurumi.Models
         [Display(Name = "Nivel de Dificuldade")]
         [Required(ErrorMessage = "Campo 'Nivel de Dificuldade' obrigatório.")]
         public int NivelId { get; set; }
+
+        public ICollection<Categoria>? Categorias { get; set; }
 
     }
 }

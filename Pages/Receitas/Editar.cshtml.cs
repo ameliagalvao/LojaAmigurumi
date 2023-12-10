@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace LojaAmigurumi.Pages
+namespace LojaAmigurumi.Pages.Receitas
 {
     public class EditarModel : PageModel
     {

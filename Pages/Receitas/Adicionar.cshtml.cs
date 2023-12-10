@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace LojaAmigurumi.Pages
+namespace LojaAmigurumi.Pages.Receitas
 {
     public class AdicionarModel : PageModel
     {
@@ -19,7 +19,8 @@ namespace LojaAmigurumi.Pages
         {
             NivelOptionItems = new SelectList(_service.ObterTodosNiveis(),
                                                 nameof(Nivel.NivelId),
-                                                nameof(Nivel.NivelNome));
+                                                nameof(Nivel.NivelNome),
+                                                nameof(Nivel.NivelDescricao));
         }
 
         [BindProperty]

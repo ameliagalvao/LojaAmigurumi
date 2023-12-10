@@ -6,7 +6,7 @@ namespace LojaAmigurumi.Data
     {
         public DbSet<Pattern> Pattern { get; set; }
         public DbSet<Nivel> Nivel { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var config = new ConfigurationBuilder()

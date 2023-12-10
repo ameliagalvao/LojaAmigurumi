@@ -3,7 +3,7 @@ using LojaAmigurumi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace LojaAmigurumi.Pages
+namespace LojaAmigurumi.Pages.Receitas
 {
     public class DetailsModel : PageModel
     {

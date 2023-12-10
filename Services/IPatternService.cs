@@ -13,6 +13,7 @@ namespace LojaAmigurumi.Services
         void Excluir(int id);
 
         IList<Nivel> ObterTodosNiveis();
+        IList<Categoria> ObterTodasCategorias();
 
     }
 }
