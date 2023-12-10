@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("PatternDbContextConnection") ?? throw new InvalidOperationException("Connection string 'PatternDbContextConnection' not found.");
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -13,7 +12,22 @@ builder.Services.AddTransient<IPatternService, PatternService>();
 
 builder.Services.AddDbContext<PatternDbContext>();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<PatternDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<PatternDbContext>();
+
+builder.Services.Configure<IdentityOptions>(options => {
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 3;
+
+    // Lockout settings
+    options.Lockout.MaxFailedAccessAttempts = 30;
+    options.Lockout.AllowedForNewUsers = true;
+
+    // User settings
+    options.User.RequireUniqueEmail = true;
+});
 
 var app = builder.Build();
 
@@ -29,6 +43,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
